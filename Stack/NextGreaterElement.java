@@ -1,16 +1,13 @@
 package Stack;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
 
- /*
-    * Example:
-     * Input: [4, 5, 2, 10, 8]
-     * Expected Output: [5, 10, 10, -1, -1]
-     * Explanation: For each element in the array, the next greater element to its right is found.
-     */
+/*
+ * Example:
+ * Input: [4, 5, 2, 10, 8]
+ * Expected Output: [5, 10, 10, -1, -1]
+ * Explanation: For each element in the array, the next greater element to its right is found.
+ */
 
 public class NextGreaterElement {
 
@@ -23,6 +20,25 @@ public class NextGreaterElement {
     }
 
     public static int[] findNextGreaterElement(int[] nums) {
-        // Your implementation here
+        int[] result = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            int currVal = nums[i];
+            boolean found = false;
+
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] > currVal) {
+                    result[i] = nums[j];
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                result[i] = -1;
+            }
+        }
+
+        return result;
     }
 }
