@@ -1,0 +1,5 @@
+inorder - root in mid
+preopder - root in beg
+
+now in order can be constructed from the preorder - just by soting the tree out.
+
